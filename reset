@@ -1,0 +1,35 @@
+
+   INFO  Running migrations.  
+
+  2025_03_12_152640_create_cart ................................ 293.12ms DONE
+  2025_03_17_204405_create_cart_product_table .................. 678.85ms DONE
+  2025_06_11_230214_banner ...................................... 80.00ms DONE
+  2025_06_14_035232_create_shop_table .......................... 297.48ms DONE
+  2025_06_20_123521_create_informacoes_pessoais_table .......... 278.06ms DONE
+  2025_07_01_160811_create_promocao_table ...................... 285.39ms DONE
+  2025_07_09_175800_create_venda_table ........................... 2.49ms FAIL
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'vendas' already exists (Connection: mysql, SQL: create table `vendas` (`id` bigint unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null, `id_user` bigint unsigned null, `status` varchar(255) not null, `valor` decimal(10, 2) not null, `tipo` varchar(255) not null, `nome` varchar(255) not null, `email` varchar(255) not null, `endereco` varchar(255) null, `cep` varchar(255) null, `rua` varchar(255) null, `numero` varchar(255) null, `telefone` varchar(255) null) default character set utf8mb4 collate 'utf8mb4_unicode_ci')
+
+  at vendor/laravel/framework/src/Illuminate/Database/Connection.php:823
+    819▕                     $this->getName(), $query, $this->prepareBindings($bindings), $e
+    820▕                 );
+    821▕             }
+    822▕ 
+  ➜ 823▕             throw new QueryException(
+    824▕                 $this->getName(), $query, $this->prepareBindings($bindings), $e
+    825▕             );
+    826▕         }
+    827▕     }
+
+      [2m+9 vendor frames [22m
+
+  10  database/migrations/2025_07_09_175800_create_venda_table.php:14
+      Illuminate\Support\Facades\Facade::__callStatic("create")
+      [2m+26 vendor frames [22m
+
+  37  artisan:16
+      Illuminate\Foundation\Application::handleCommand(Object(Symfony\Component\Console\Input\ArgvInput))
+

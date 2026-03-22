@@ -1,0 +1,17 @@
+.ClassforProduct {
+  text-align: center;
+}
+
+.imgproduct {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.nameP {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-family: "IBM Plex Serif", serif;
+}
